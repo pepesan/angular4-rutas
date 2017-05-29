@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MiClase } from 'app/mi-clase';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  titulo: string;
+  objeto: MiClase
+  constructor() {
+    this.titulo="Mí título"
+    this.objeto.titulo="Otro título"
+  }
 
   ngOnInit() {
   }
