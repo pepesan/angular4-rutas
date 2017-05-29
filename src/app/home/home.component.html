@@ -1,3 +1,14 @@
-<h1>Inicio</h1>
-<h2>{{titulo}}</h2>
-<h3>{{objeto.titulo}}</h3>
+<h4>Inicio</h4>
+<p>{{titulo}}</p>
+<p>{{objeto.titulo}}</p>
+<p>{{fecha | date:"dd/MM/yyyy"}}</p>
+<ul>
+  <li *ngFor="let hero of heroes">
+    {{ hero }}
+  </li>
+</ul>
+<button (click)="cambia()">Cambia presente</button>
+<div *ngIf="presente">
+  <h6>Algo está presente</h6>
+</div>
+

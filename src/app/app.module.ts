@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home ', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
  // { path: 'manage-book', component: ManageBookComponent },
  // { path: 'update-book/:id', component: UpdateBookComponent },
  // { path: '', redirectTo: '/manage-book ', pathMatch: 'full' },
