@@ -1,6 +1,6 @@
 export class MiClase {
   titulo:string;
   constructor(){
-    this.titulo="";
+    this.titulo="hola";
   }
 }
