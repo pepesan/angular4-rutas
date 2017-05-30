@@ -9,7 +9,7 @@ import {ResultadosService} from "../resultados.service"
 })
 export class RequestComponent implements OnInit {
 
-  resultados: any;
+  resultados: Resultado[];
   url: string;
 
   constructor(private resultadosService: ResultadosService) {
