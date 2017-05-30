@@ -1,0 +1,12 @@
+<p>
+  <button (click)="clicked($event)">Púlsame</button>
+</p>
+<div *ngIf="pulsado">
+  <p>Loren Ipsum</p>
+</div>
+<button (click)="limpia($event)">Limpia</button>
+<input #caja (keyup)="onKey($event)">
+<p>{{caja.value}}</p>
+<p>{{values}}</p>
+<input (change)="onChange($event)">
+<p>{{values2}}</p>

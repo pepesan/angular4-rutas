@@ -10,10 +10,12 @@ import { HomeComponent } from './home/home.component';
 import {DatosService} from "./datos.service";
 import {ResultadosService} from "./resultados.service";
 import { RequestComponent } from './request/request.component';
+import { EventosComponent } from './eventos/eventos.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'home', component: HomeComponent },
   { path: 'request', component: RequestComponent },
+  { path: 'eventos', component: EventosComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
  // { path: 'manage-book', component: ManageBookComponent },
  // { path: 'update-book/:id', component: UpdateBookComponent },
@@ -26,7 +28,8 @@ const routes: Routes = [
     AppComponent,
     TodoComponent,
     HomeComponent,
-    RequestComponent
+    RequestComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
