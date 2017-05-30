@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Resultado} from "../resultado"
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {Resultado} from "../resultado"
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 @Component({
