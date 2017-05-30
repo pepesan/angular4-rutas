@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { HomeComponent } from './home/home.component';
 import {DatosService} from "./datos.service";
+import { RequestComponent } from './request/request.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'request', component: RequestComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
  // { path: 'manage-book', component: ManageBookComponent },
  // { path: 'update-book/:id', component: UpdateBookComponent },
@@ -22,7 +24,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TodoComponent,
-    HomeComponent
+    HomeComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
