@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { HomeComponent } from './home/home.component';
 import {DatosService} from "./datos.service";
+import {ResultadosService} from "./resultados.service";
 import { RequestComponent } from './request/request.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
@@ -33,7 +34,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DatosService],
+  providers: [DatosService, ResultadosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
