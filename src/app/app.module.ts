@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from 'environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
@@ -12,12 +16,14 @@ import {ResultadosService} from "./resultados.service";
 import { RequestComponent } from './request/request.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { FirebaseComponent } from './firebase/firebase.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'home', component: HomeComponent },
   { path: 'request', component: RequestComponent },
   { path: 'eventos', component: EventosComponent },
   { path: 'formulario', component: FormularioComponent},
+  { path: 'firebase', component: FirebaseComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
  // { path: 'manage-book', component: ManageBookComponent },
  // { path: 'update-book/:id', component: UpdateBookComponent },
@@ -32,13 +38,17 @@ const routes: Routes = [
     HomeComponent,
     RequestComponent,
     EventosComponent,
-    FormularioComponent
+    FormularioComponent,
+    FirebaseComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   providers: [DatosService, ResultadosService],
   bootstrap: [AppComponent]
