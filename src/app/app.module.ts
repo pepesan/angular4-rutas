@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
@@ -49,6 +50,7 @@ const routes: Routes = [
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    Ng2OrderModule
   ],
   providers: [DatosService, ResultadosService],
   bootstrap: [AppComponent]
