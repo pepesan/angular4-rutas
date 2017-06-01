@@ -1,3 +1,14 @@
-<p>
-  todo works!
-</p>
+<p>{{titulo}}</p>
+<p>{{objeto.titulo}}</p>
+<p>{{datos[0].titulo}}</p>
+<p>{{fecha | date:"dd/MM/yyyy"}}</p>
+<ul>
+  <li *ngFor="let hero of heroes">
+    {{ hero }}
+  </li>
+</ul>
+<button (click)="cambia()">Cambia presente</button>
+<div *ngIf="presente">
+  <h6>Algo está presente</h6>
+</div>
+

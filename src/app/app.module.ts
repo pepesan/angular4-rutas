@@ -11,17 +11,19 @@ import {DatosService} from "./datos.service";
 import {ResultadosService} from "./resultados.service";
 import { RequestComponent } from './request/request.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { FormularioComponent } from './formulario/formulario.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'home', component: HomeComponent },
   { path: 'request', component: RequestComponent },
   { path: 'eventos', component: EventosComponent },
+  { path: 'formulario', component: FormularioComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
  // { path: 'manage-book', component: ManageBookComponent },
  // { path: 'update-book/:id', component: UpdateBookComponent },
  // { path: '', redirectTo: '/manage-book ', pathMatch: 'full' },
  // { path: '**', component: PageNotFoundComponent }
-]
+];
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ const routes: Routes = [
     TodoComponent,
     HomeComponent,
     RequestComponent,
-    EventosComponent
+    EventosComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

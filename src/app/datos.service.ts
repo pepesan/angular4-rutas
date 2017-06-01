@@ -3,15 +3,18 @@ import {MiClase} from "./mi-clase";
 
 @Injectable()
 export class DatosService {
-  getDatos: Function;
+  //getDatos: Function;
   datos:MiClase[];
 
   constructor() {
     this.datos=[new MiClase()];
-    this.getDatos=function () {
+    /*this.getDatos=function () {
       return this.datos;
     };
+    */
   }
-
+  getDatos(){
+    return this.datos;
+  }
 
 }
