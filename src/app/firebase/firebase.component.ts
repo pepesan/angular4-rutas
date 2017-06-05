@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import {Dato} from "../dato"
 @Component({
   selector: 'app-firebase',
@@ -12,8 +12,19 @@ export class FirebaseComponent implements OnInit {
   value: string;
   items: FirebaseListObservable<Dato[]>;
 
+  undato:FirebaseObjectObservable<Dato>;
+  clave: string;
+
   constructor(db: AngularFireDatabase) {
     this.db = db;
+    this.cogeItems();
+  }
+
+
+  ngOnInit() {
+  }
+
+  cogeItems(){
     this.items = this.db.list('/elements', {
       query: {
         // limitToLast: 10,
@@ -22,7 +33,11 @@ export class FirebaseComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  muestra(){
+    this.undato=this.db.object("/elements/-KlZcCbMStq_2L-3URca");
+  }
+  cambia(){
+    this.undato.update({value:"otro valor"});
   }
 
   addEntry() {
