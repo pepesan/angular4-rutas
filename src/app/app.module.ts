@@ -8,6 +8,8 @@ import { environment } from 'environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule, MdNativeDateModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
@@ -22,6 +24,7 @@ import { AuthService } from './providers/auth.service';
 import { AuthComponent } from './auth/auth.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoggedComponent } from './logged/logged.component';
+import { MaterialComponent } from './material/material.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'home', component: HomeComponent },
@@ -31,6 +34,7 @@ const routes: Routes = [
   { path: 'firebase', component: FirebaseComponent},
   { path: 'auth', component: AuthComponent},
   { path: 'logged', component: LoggedComponent},
+  { path: 'material', component: MaterialComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
  // { path: 'manage-book', component: ManageBookComponent },
  // { path: 'update-book/:id', component: UpdateBookComponent },
@@ -48,7 +52,8 @@ const routes: Routes = [
     FormularioComponent,
     FirebaseComponent,
     AuthComponent,
-    LoggedComponent
+    LoggedComponent,
+    MaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,10 @@ const routes: Routes = [
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    Ng2OrderModule
+    Ng2OrderModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MdNativeDateModule,
   ],
   providers: [DatosService, ResultadosService,AuthService,AngularFireAuth],
   bootstrap: [AppComponent]

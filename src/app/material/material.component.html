@@ -1,0 +1,35 @@
+<md-sidenav-container class="example-container">
+  <md-sidenav #sidenav class="example-sidenav">
+    Jolly good!
+  </md-sidenav>
+
+  <md-toolbar>My App</md-toolbar>
+  <div class="example-sidenav-content">
+    <button md-button (click)="sidenav.open()">
+      Open sidenav
+    </button>
+  </div>
+
+  <md-tab-group>
+    <md-tab label="Tab 1">
+      <md-input-container>
+        <input mdInput [mdDatepicker]="picker" [mdDatepickerFilter]="myFilter" [min]="minDate" [max]="maxDate" placeholder="Choose a date">
+        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+      </md-input-container>
+      <md-datepicker #picker></md-datepicker>
+      <md-slider></md-slider>
+    </md-tab>
+    <md-tab label="Tab 2">
+      <md-grid-list cols="2" rowHeight="2:1">
+        <md-grid-tile>1</md-grid-tile>
+        <md-grid-tile>2</md-grid-tile>
+        <md-grid-tile>3</md-grid-tile>
+        <md-grid-tile>4</md-grid-tile>
+      </md-grid-list>
+    </md-tab>
+  </md-tab-group>
+
+
+
+
+</md-sidenav-container>
