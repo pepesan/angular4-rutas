@@ -1,0 +1,4 @@
+<div *ngIf="user"> {{ (user | async)?.uid }} </div>
+<div *ngIf="!user">
+  No hay usuario
+</div>

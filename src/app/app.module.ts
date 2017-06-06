@@ -18,6 +18,10 @@ import { RequestComponent } from './request/request.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { FirebaseComponent } from './firebase/firebase.component';
+import { AuthService } from './providers/auth.service';
+import { AuthComponent } from './auth/auth.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { LoggedComponent } from './logged/logged.component';
 const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'home', component: HomeComponent },
@@ -25,6 +29,8 @@ const routes: Routes = [
   { path: 'eventos', component: EventosComponent },
   { path: 'formulario', component: FormularioComponent},
   { path: 'firebase', component: FirebaseComponent},
+  { path: 'auth', component: AuthComponent},
+  { path: 'logged', component: LoggedComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
  // { path: 'manage-book', component: ManageBookComponent },
  // { path: 'update-book/:id', component: UpdateBookComponent },
@@ -40,7 +46,9 @@ const routes: Routes = [
     RequestComponent,
     EventosComponent,
     FormularioComponent,
-    FirebaseComponent
+    FirebaseComponent,
+    AuthComponent,
+    LoggedComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,7 @@ const routes: Routes = [
     AngularFireDatabaseModule,
     Ng2OrderModule
   ],
-  providers: [DatosService, ResultadosService],
+  providers: [DatosService, ResultadosService,AuthService,AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

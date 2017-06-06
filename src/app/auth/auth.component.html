@@ -1,0 +1,20 @@
+<div> {{ (user | async)?.uid }} </div>
+<div class="form-container">
+
+  <h2>Registrar Usuario</h2>
+
+  <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
+  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+    <input type="text" placeholder="Email address.." [(ngModel)]="email" name="email" class="txt" required>
+    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" class="txt" required>
+
+
+    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Registrar Usuario</button>
+
+  </form>
+</div>
+<button (click)="loginUser()" [disabled]="!formData.valid" class="basic-btn">Login con Usuario</button>
+<button (click)="loginGoogle()">Login con Google</button>
+<button (click)="logout()">Logout</button>
