@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable,
+  FirebaseObjectObservable } from 'angularfire2/database';
 import {Dato} from "../dato"
 @Component({
   selector: 'app-firebase',
